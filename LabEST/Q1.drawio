@@ -1,0 +1,185 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="ZyncArchDiagram">
+    <mxGraphModel dx="3460" dy="2745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fr-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;FUNCTIONAL REQUIREMENTS&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="560" x="50" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="fr-body" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;1. USER REGISTRATION WITH OTP EMAIL VERIFICATION&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;2. SECURE LOGIN WITH JWT AUTHENTICATION&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;3. REAL-TIME 1-1 AND GROUP MESSAGING VIA SOCKET.IO&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;4. FRIEND REQUESTS, BLOCK/UNBLOCK USERS&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;5. TYPING INDICATORS, ONLINE/OFFLINE PRESENCE&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;6. MESSAGE REPLY, EDIT, DELETE (ME / EVERYONE)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;7. GROUP CREATION, ADMIN CONTROLS, MEMBER MANAGEMENT&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="760" x="80" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="nfr-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;NON-FUNCTIONAL REQUIREMENTS&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="600" x="50" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="nfr-body" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;1. MESSAGE DELIVERY LATENCY &lt; 50MS ON LOCAL NETWORK&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;2. SYSTEM HANDLES 10,000+ CONCURRENT WEBSOCKET CONNECTIONS&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;3. JWT AUTH OVERHEAD &lt; 5MS PER REQUEST&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;4. OTP EXPIRES IN 10 MINUTES (SINGLE USE)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;5. HORIZONTAL SCALABILITY VIA REDIS PUB/SUB + STATELESS JWT&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="750" x="80" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="api-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;API DESIGN&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="400" x="50" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="api-auth" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;AUTH&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/auth/register&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/auth/verify-email&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/auth/login&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/auth/forgot-password/request-otp&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/auth/forgot-password/reset&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="400" x="80" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="api-friends" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;FRIENDS&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/friends/request&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/friends/requests/:id/accept&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;GET /api/friends/list&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/friends/block/:userId&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="400" x="80" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="api-messages" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;MESSAGES&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;GET /api/chats/direct/:userId/messages&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;GET /api/chats/groups&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;POST /api/chats/groups&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;PATCH /api/messages/:messageId&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;DELETE /api/messages/:messageId?scope=me|everyone&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="490" x="80" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="ent-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;CORE ENTITIES&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="400" x="50" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="ent-body" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;1. USER&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;2. PENDING_SIGNUP&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;3. CHAT&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;4. GROUP&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;5. MESSAGE&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;6. FRIEND_REQUEST&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;7. USER_BLOCK&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;8. READ_RECEIPT&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="360" x="200" y="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="hld-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;HLD (HIGH LEVEL DESIGN)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="300" width="940" x="1170" y="4010" as="geometry" />
+        </mxCell>
+        <mxCell id="agw-box" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=4;labelBackgroundColor=none;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;LOAD BALANCING&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;AUTHENTICATION&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;AUTHORIZATION&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;RATE LIMITING&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;WS STICKY SESSIONS&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="590" width="620" x="820" y="4500" as="geometry" />
+        </mxCell>
+        <mxCell id="agw-icon" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;strokeWidth=4;" value="API Gateway" vertex="1">
+          <mxGeometry height="190" width="190" x="1000" y="4510" as="geometry" />
+        </mxCell>
+        <mxCell id="e-c1-gw" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;endArrow=classic;" target="agw-box">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="4729.999999999999" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-c2-gw" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;endArrow=classic;" target="agw-box">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="4939.999999999999" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="user-svc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66FF66;gradientColor=#b3b3b3;strokeColor=#666666;gradientDirection=east;strokeWidth=4;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 42px;&quot;&gt;&lt;b&gt;USER SERVICE&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="500" x="1600" y="4590" as="geometry" />
+        </mxCell>
+        <mxCell id="chat-svc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;gradientColor=#b3b3b3;strokeColor=#666666;gradientDirection=east;strokeWidth=4;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 42px;&quot;&gt;&lt;b&gt;CHAT SERVICE&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="500" x="1600" y="4780" as="geometry" />
+        </mxCell>
+        <mxCell id="rt-svc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;gradientColor=#b3b3b3;strokeColor=#666666;gradientDirection=east;strokeWidth=4;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 42px;&quot;&gt;&lt;b&gt;REALTIME SERVICE&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="500" x="1600" y="4970" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-auth" edge="1" parent="1" source="agw-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.2;exitDx=0;exitDy=0;strokeWidth=4;endArrow=classic;entryX=0.044;entryY=0.348;entryDx=0;entryDy=0;entryPerimeter=0;" target="FbGW4Jpf4c4Z0XMDK4OE-1" value="User">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1570" y="4618" />
+              <mxPoint x="1570" y="4390" />
+              <mxPoint x="1718" y="4390" />
+            </Array>
+            <mxPoint x="1590" y="4380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-gw-user" edge="1" parent="1" source="agw-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;strokeWidth=4;endArrow=classic;" target="user-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-chat" edge="1" parent="1" source="agw-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.65;exitDx=0;exitDy=0;strokeWidth=4;endArrow=classic;" target="chat-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-rt" edge="1" parent="1" source="agw-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.85;exitDx=0;exitDy=0;strokeWidth=4;endArrow=classic;" target="rt-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="notif-svc" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;strokeWidth=4;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 42px;&quot;&gt;&lt;b&gt;NOTIFICATION SVC&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="200" width="590" x="2360" y="4390" as="geometry" />
+        </mxCell>
+        <mxCell id="e-auth-notif" edge="1" parent="1" source="FbGW4Jpf4c4Z0XMDK4OE-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=4;endArrow=classic;" target="notif-svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2100" y="4465" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl-auth-notif" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;OTP EMAIL&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="1970" y="4390" as="geometry" />
+        </mxCell>
+        <mxCell id="redis-box" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillStyle=solid;fillColor=#b1ddf0;strokeColor=#10739e;strokeWidth=4;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 39px;&quot;&gt;&lt;b&gt;REDIS&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;PUB/SUB + CACHE&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;• SOCKET.IO MULTI-INSTANCE ADAPTER&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;• OTP TTL STORE&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;• PRESENCE CHANNEL&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;• RATE LIMIT COUNTERS&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="280" width="450" x="2360" y="4680" as="geometry" />
+        </mxCell>
+        <mxCell id="e-rt-redis" edge="1" parent="1" source="rt-svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=4;endArrow=classic;" target="redis-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-rt-redis" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;PUB/SUB FANOUT&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="2030" y="5000" as="geometry" />
+        </mxCell>
+        <mxCell id="queue-box" parent="1" style="whiteSpace=wrap;html=1;fillStyle=solid;strokeWidth=4;fillColor=#fad7ac;strokeColor=#b46504;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 39px;&quot;&gt;&lt;b&gt;BULLMQ&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;MESSAGE QUEUE&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;• EMAIL JOB QUEUE&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;• RETRY + DEAD-LETTER&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="430" x="2370" y="5050" as="geometry" />
+        </mxCell>
+        <mxCell id="e-notif-queue" edge="1" parent="1" source="notif-svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;endArrow=classic;" target="queue-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pg-icon" parent="1" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.postgre_sql_instance;fillColor=#2E73B8;gradientColor=none;strokeWidth=4;" value="" vertex="1">
+          <mxGeometry height="260" width="310" x="2710" y="5560" as="geometry" />
+        </mxCell>
+        <mxCell id="pg-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;strokeWidth=4;" value="&lt;b&gt;&lt;font style=&quot;font-size: 34px;&quot;&gt;POSTGRESQL&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 34px;&quot;&gt;PRIMARY DB&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="380" x="2670" y="5850" as="geometry" />
+        </mxCell>
+        <mxCell id="pg-replica-icon" parent="1" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.postgre_sql_instance;fillColor=#2E73B8;gradientColor=none;strokeWidth=4;" value="" vertex="1">
+          <mxGeometry height="240" width="280" x="3200" y="5560" as="geometry" />
+        </mxCell>
+        <mxCell id="pg-replica-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;strokeWidth=4;" value="&lt;b&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;READ REPLICA&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="290" x="3190" y="5820" as="geometry" />
+        </mxCell>
+        <mxCell id="e-chat-pg" edge="1" parent="1" source="chat-svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=4;endArrow=classic;" target="pg-icon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-user-pg-read" edge="1" parent="1" source="user-svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=4;endArrow=classic;dashed=1;" target="pg-replica-icon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-read-replica" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;READ ONLY&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="140" x="3610" y="4680" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pg-repl" edge="1" parent="1" source="pg-icon" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=4;endArrow=open;dashed=1;" target="pg-replica-icon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-replication" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;REPLICATION&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="2990" y="5650" as="geometry" />
+        </mxCell>
+        <mxCell id="pgbouncer" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=4;rounded=1;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 32px;&quot;&gt;&lt;b&gt;PGBOUNCER&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;CONNECTION POOLER&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="380" x="1620" y="5530" as="geometry" />
+        </mxCell>
+        <mxCell id="e-chat-pgb" edge="1" parent="1" source="chat-svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=4;endArrow=classic;" target="pgbouncer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pgb-pg" edge="1" parent="1" source="pgbouncer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=4;endArrow=classic;" target="pg-icon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="presence-svc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9dbc8;strokeColor=#d6a560;strokeWidth=4;" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 42px;&quot;&gt;&lt;b&gt;PRESENCE SERVICE&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;ONLINE / OFFLINE • LAST SEEN AT • SOCKET ROOMS&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="600" x="1600" y="5760" as="geometry" />
+        </mxCell>
+        <mxCell id="e-presence-redis" edge="1" parent="1" source="presence-svc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=4;endArrow=classic;dashed=1;" target="redis-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="email-icon" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.http_notification;strokeWidth=4;" value="" vertex="1">
+          <mxGeometry height="200" width="200" x="3580" y="4380" as="geometry" />
+        </mxCell>
+        <mxCell id="email-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;NODEMAILER&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;SMTP EMAIL DELIVERY&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="250" x="3540" y="4600" as="geometry" />
+        </mxCell>
+        <mxCell id="e-queue-email" edge="1" parent="1" source="queue-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeWidth=4;endArrow=classic;" target="email-icon">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2900" y="5160" />
+              <mxPoint x="2900" y="4530" />
+              <mxPoint x="3100" y="4530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seat-lock" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 34px;&quot;&gt;USE REDIS TTL FOR OTP LOCKING LOGIC&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="700" x="1580" y="6060" as="geometry" />
+        </mxCell>
+        <mxCell id="FbGW4Jpf4c4Z0XMDK4OE-1" parent="1" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cas_ssl_central_authentication_service;" value="" vertex="1">
+          <mxGeometry height="200" width="176.97" x="1710" y="4330" as="geometry" />
+        </mxCell>
+        <mxCell id="FbGW4Jpf4c4Z0XMDK4OE-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="105" width="80" x="190" y="4670" as="geometry" />
+        </mxCell>
+        <mxCell id="FbGW4Jpf4c4Z0XMDK4OE-3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="110" width="85" x="187.5" y="4870" as="geometry" />
+        </mxCell>
+        <mxCell id="FbGW4Jpf4c4Z0XMDK4OE-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Register/ Login Service" vertex="1">
+          <mxGeometry height="80" width="220" x="1690" y="4500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
